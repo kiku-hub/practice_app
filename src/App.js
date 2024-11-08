@@ -1,25 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react"; // Reactライブラリをインポート
 
-function App() {
+function App() { // Appという関数コンポーネントを定義
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div> // divタグを返す
+      <h1>Hello World</h1> // h1タグで "Hello World" を表示
     </div>
   );
 }
 
-export default App;
+export default App; // Appコンポーネントをエクスポートし、他のファイルで使用可能にする
