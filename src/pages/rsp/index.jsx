@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Hand from "../../components/hand";
 
-export default class Index extends React.Component {
-
+export default class Index extends React.Component{
   constructor() {
     super();
     this.state = {
@@ -10,8 +10,13 @@ export default class Index extends React.Component {
     };
   }
 
+//追記。アロー関数形式でクラスに関数を定義
+  handleOnClick = (val) => {
+    this.setState({selectHand: val});
+  }
+
   render() {
-    const imgSize = 100;
+    const handTypes = [0,1,2]
     return (
       <div
         style={{
@@ -22,48 +27,9 @@ export default class Index extends React.Component {
       >
         <h1>じゃんけんページ</h1>
         <div style={{ display: "flex" }}>
-          <button
-            onClick={() => {
-              this.setState({selectHand: 0});
-            }}
-          >
-            <img
-              src={`images/rock.jpeg`}
-              alt="rock"
-              style={{
-                height: imgSize,
-                width: imgSize,
-              }}
-            />
-          </button>
-          <button
-            onClick={() => {
-              this.setState({selectHand: 1});
-            }}
-          >
-            <img
-              src={`images/paper.jpeg`}
-              alt="paper"
-              style={{
-                height: imgSize,
-                width: imgSize,
-              }}
-            />
-          </button>
-          <button
-            onClick={() => {
-              this.setState({selectHand: 2});
-            }}
-          >
-            <img
-              src={`images/scissors.jpeg`}
-              alt="scissors"
-              style={{
-                height: imgSize,
-                width: imgSize,
-              }}
-            />
-          </button>
+          {handTypes.map((handType) => (
+            <Hand selectHand={handType} selectedHand={this.state.selectHand} clickHand={this.handleOnClick} />
+          ))}
         </div>
         <Link to="/">
           <h1>じゃんけんを終了する</h1>
