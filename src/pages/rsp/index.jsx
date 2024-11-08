@@ -11,9 +11,9 @@ export default class Index extends React.Component {
           alignItems: "center",
         }}
       >
-        <h1>ジャンケンに挑戦しよう！</h1>
-        <Link to="/rsp">
-          <h1>じゃんけんページへ</h1>
+        <h1>じゃんけんページ</h1>
+        <Link to="/">
+          <h1>じゃんけんを終了する</h1>
         </Link>
       </div>
     );
